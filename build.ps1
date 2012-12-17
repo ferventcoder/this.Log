@@ -12,7 +12,7 @@ dir -r -include packages.config -exclude **\.git\** | %{
 $MsBuild="$($env:WINDIR)\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
 & $MsBuild $localDir\LoggingExtensions.sln /property:Configuration=Release
 
-dir -r -include *.csproj -exclude **\.git\** | %{  
+dir -r -include *.csproj -exclude **\.git\**,**\*.Tests\** | %{  
   if ($_.FullName.ToLower().EndsWith(".sample.csproj") -or $_.FullName.ToLower().EndsWith(".sample.vbproj")) {
     $nuspec = join-path $_.Directory.Name $_.Name.Replace('csproj','nuspec').Replace('LoggingExtensions.','this.Log-')
     Write-Host "Building and packaging a nuget package for `'$nuspec'";
