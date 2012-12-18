@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>this.Log-log4net.Sample.VB</id>
+    <version>0.0.1.0</version>
+    <title>this.Log Logging Extension (log4net Plugin) SAMPLE for VB.NET</title>
+    <authors>RealDimensions Software, LLC</authors>
+    <owners>Rob Reynolds</owners>
+    <projectUrl>https://github.com/ferventcoder/this.Log</projectUrl>
+    <licenseUrl>https://raw.github.com/ferventcoder/this.Log/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>this.Log-log4net.Sample - this.Log logging extension using log4net</summary>
+    <description>this.Log-log4net.Sample is a sample of how to use the log4net plugin to this.Log logging extension.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>logging log this.Log log4net sample</tags>
+    <dependencies>
+      <dependency id="this.Log-log4net" version="0.0.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="SampleRun.vb.pp" target="content" />
+    <file src="TestClass.vb.pp" target="content" />
+  </files>
+</package>

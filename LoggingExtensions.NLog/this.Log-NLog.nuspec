@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Rob Reynolds</owners>
+    <projectUrl>https://github.com/ferventcoder/this.Log</projectUrl>
+    <licenseUrl>https://raw.github.com/ferventcoder/this.Log/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>this.Log-NLog - this.Log logging extension using NLog</summary>
+    <description>this.Log-NLog</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>logging log this.Log nlog</tags>
+    <dependencies>
+      <dependency id="this.Log" version="0.0.1.0" />
+      <dependency id="NLog" version="2.0.0.2000" />
+    </dependencies>
+  </metadata>
+</package>
