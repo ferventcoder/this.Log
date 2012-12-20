@@ -16,7 +16,7 @@
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log testing moq</tags>
     <dependencies>
-      <dependency id="this.Log" version="0.0.1.0" />
+      <dependency id="this.Log" version="0.0.2.0" />
       <dependency id="Moq" version="4.0.10827" />
     </dependencies>
   </metadata>
