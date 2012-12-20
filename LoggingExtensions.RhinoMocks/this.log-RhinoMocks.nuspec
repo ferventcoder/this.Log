@@ -20,4 +20,7 @@
       <dependency id="RhinoMocks" version="3.6.1" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="ReadMe.txt" target="" />
+  </files>
 </package>

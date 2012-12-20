@@ -102,6 +102,7 @@
     <None Include="app.config" />
     <Content Include="app.config.transform" />
     <None Include="packages.config" />
+    <None Include="ReadMe.txt" />
     <Content Include="web.config.transform" />
     <None Include="this.Log-NLog.VB.Sample.nuspec" />
   </ItemGroup>

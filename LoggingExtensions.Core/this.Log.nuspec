@@ -19,4 +19,7 @@ What it doesn't bring though is a logging facility. Please search nuget for this
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log</tags>
   </metadata>
+  <files>
+    <file src="ReadMe.txt" target="" />
+  </files>
 </package>

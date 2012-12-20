@@ -20,4 +20,7 @@
       <dependency id="NLog" version="2.0.0.2000" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="ReadMe.txt" target="" />
+  </files>
 </package>

@@ -73,6 +73,7 @@
     <Compile Include="SampleRun.cs">
       <SubType>Code</SubType>
     </Compile>
+    <None Include="ReadMe.txt" />
     <Content Include="SampleRun.cs.pp" />
     <Compile Include="LogExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

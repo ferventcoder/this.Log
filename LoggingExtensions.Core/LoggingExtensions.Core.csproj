@@ -40,7 +40,7 @@
     </Compile>
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\Log.cs" />
-    <Content Include="ReadMe.txt" />
+    <None Include="ReadMe.txt" />
     <Content Include="LogExtensions.cs.pp" />
     <Compile Include="Logging\NullLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

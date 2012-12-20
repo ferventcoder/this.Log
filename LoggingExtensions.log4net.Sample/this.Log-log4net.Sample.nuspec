@@ -23,5 +23,6 @@
     <file src="SampleRun.cs.pp" target="content" />
     <file src="app.config.transform" target="content" />
     <file src="web.config.transform" target="content" />
+    <file src="ReadMe.txt" target="" />
   </files>
 </package>

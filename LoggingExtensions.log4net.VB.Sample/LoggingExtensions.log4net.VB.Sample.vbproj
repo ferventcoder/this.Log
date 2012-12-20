@@ -104,6 +104,8 @@
     <Content Include="app.config.transform" />
     <None Include="packages.config" />
     <None Include="this.Log-log4net.VB.Sample.nuspec" />
+    <Content Include="LogExtensions.cs" />
+    <None Include="ReadMe.txt" />
     <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
