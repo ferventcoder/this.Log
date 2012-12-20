@@ -22,5 +22,7 @@
   <files>
     <file src="SampleRun.vb.pp" target="content" />
     <file src="TestClass.vb.pp" target="content" />
+    <file src="app.config.transform" target="content" />
+    <file src="web.config.transform" target="content" />
   </files>
 </package>
