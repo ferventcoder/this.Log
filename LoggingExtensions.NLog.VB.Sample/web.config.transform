@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog"/>
+  </configSections>
+  <nlog>
+    <targets>
+      <target name="console" type="Console"
+              layout="${message}"
+              />
+      <target name="file" type="AsyncWrapper"
+            queueLimit="5000"
+            overflowAction="Discard">
+        <target type="File"
+              fileName="${basedir}/logs/this.Log-NLog.Sample.log"
+              layout="${longdate} ${threadid} [${level:uppercase=true}] ${message}"
+              />
+      </target>
+      <target name="errorSmtp" type="Mail"
+           layout="${longdate} ${threadid} [${level:uppercase=true}] ${logger} - ${message}"
+           subject="this.Log Sample Console Errors - LOCAL DEBUG"
+           to="noone@noreply.org"
+           from="this.Log.sample@noreply.org"
+           smtpServer="localhost"
+             />
+    </targets>
+
+    <rules>
+      <logger name="*" minlevel="Debug" writeTo="file" />
+      <logger name="*" minlevel="Debug" writeTo="console" />
+      <logger name="*" minlevel="Error" writeTo="errorSmtp" />
+    </rules>
+  </nlog>
+</configuration>

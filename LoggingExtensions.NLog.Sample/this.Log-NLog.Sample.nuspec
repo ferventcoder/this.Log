@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>this.Log-NLog.Sample</id>
+    <version>0.0.1.0</version>
+    <title>this.Log Logging Extension (NLog Plugin) SAMPLE</title>
+    <authors>RealDimensions Software, LLC</authors>
+    <owners>Rob Reynolds</owners>
+    <projectUrl>https://github.com/ferventcoder/this.Log</projectUrl>
+    <licenseUrl>https://raw.github.com/ferventcoder/this.Log/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>this.Log-NLog.Sample - this.Log logging extension using NLog</summary>
+    <description>this.Log-NLog.Sample is a sample of how to use the NLog plugin to this.Log logging extension.</description>
+    <releaseNotes>
+    </releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>logging log this.Log NLog sample</tags>
+    <dependencies>
+      <dependency id="this.Log-NLog" version="0.0.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="SampleRun.cs.pp" target="content" />
+    <file src="app.config.transform" target="content" />
+    <file src="web.config.transform" target="content" />
+  </files>
+</package>
