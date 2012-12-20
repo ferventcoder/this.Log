@@ -10,7 +10,7 @@
     <licenseUrl>https://raw.github.com/ferventcoder/this.Log/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>this.Log-NLog - this.Log logging extension using NLog</summary>
-    <description>this.Log-NLog</description>
+    <description>this.Log-NLog is the NLog plugin to this.Log logging extension.</description>
     <releaseNotes>
     </releaseNotes>
     <copyright>Copyright 2012</copyright>

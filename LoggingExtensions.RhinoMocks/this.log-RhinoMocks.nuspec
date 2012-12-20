@@ -10,7 +10,7 @@
     <licenseUrl>https://raw.github.com/ferventcoder/this.Log/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>this.Log-RhinoMocks - this.Log logging extension using Rhino Mocks</summary>
-    <description>this.Log-RhinoMocks</description>
+    <description>this.Log-RhinoMocks is the Rhino Mocks plugin to this.Log logging extension that brings the MockLogger.s</description>
     <releaseNotes>
     </releaseNotes>
     <copyright>Copyright 2012</copyright>
