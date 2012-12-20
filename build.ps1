@@ -18,7 +18,7 @@ if (!(test-path $outputDir)){
   md $outputDir | out-null
 }
 
-dir -r -include *.csproj -exclude **\.git\**,**\*.Tests\** | %{  
+dir -r -include *.csproj,*.vbproj -exclude **\.git\**,**\*.Tests\** | %{  
   if ($_.FullName.ToLower().EndsWith(".sample.csproj") -or $_.FullName.ToLower().EndsWith(".sample.vbproj")) {
     $nuspec = join-path $_.Directory.Name $_.Name.Replace('csproj','nuspec').Replace('LoggingExtensions.','this.Log-')
     Write-Host "Building and packaging a nuget package for `'$nuspec'";
