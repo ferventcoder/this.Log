@@ -18,6 +18,21 @@ foreach ($line in $sharedAssemblyContents) {
 } 
 $sharedAssemblyReplace | Out-File $sharedAssembly -encoding UTF8 -force
 
+$sharedAssembly = Join-Path $localDir 'SharedAssembly.vb'
+Write-Host "Updating version in `'$sharedAssembly`'"
+$sharedAssemblyContents = Get-Content $sharedAssembly
+$sharedAssemblyReplace = @()
+foreach ($line in $sharedAssemblyContents) { 
+  $assemblyVersionPattern = 'AssemblyVersion\(\"\d+\.\d+\.\d+\.\d+\"\)';
+  $assemblyVersionReplace = "AssemblyVersion(`"$version`")"
+  $line = [regex]::replace($line, $assemblyVersionPattern, "$assemblyVersionReplace")
+  $assemblyFileVersionPattern = 'AssemblyFileVersion\(\"\d+\.\d+\.\d+\.\d+\"\)';
+  $assemblyFileVersionReplace = "AssemblyFileVersion(`"$version`")"
+  $line = [regex]::replace($line, $assemblyFileVersionPattern, "$assemblyFileVersionReplace")
+  $sharedAssemblyReplace += [Array]$line
+} 
+$sharedAssemblyReplace | Out-File $sharedAssembly -encoding UTF8 -force
+
 Write-Host "Updating version in nuspecs"
 dir -r -include *.nuspec -exclude **\.git\** | %{ 
   [xml]$nuspec = Get-Content $_.FullName
