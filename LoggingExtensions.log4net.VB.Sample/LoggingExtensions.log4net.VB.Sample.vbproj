@@ -83,11 +83,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="this.Log, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\this.Log.0.0.1.0\lib\net40\this.Log.dll</HintPath>
+    <Reference Include="this.Log, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\this.Log.0.0.2.0\lib\net40\this.Log.dll</HintPath>
     </Reference>
-    <Reference Include="this.Log-log4net, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\this.Log-log4net.0.0.1.0\lib\this.Log-log4net.dll</HintPath>
+    <Reference Include="this.Log-log4net, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\this.Log-log4net.0.0.2.0\lib\net40\this.Log-log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +106,6 @@
     <Content Include="app.config.transform" />
     <None Include="packages.config" />
     <None Include="this.Log-log4net.VB.Sample.nuspec" />
-    <Content Include="LogExtensions.cs" />
     <None Include="ReadMe.txt" />
     <Content Include="web.config.transform" />
   </ItemGroup>

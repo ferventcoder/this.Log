@@ -59,11 +59,13 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="this.Log">
-      <HintPath>..\packages\this.Log.0.0.1.0\lib\net40\this.Log.dll</HintPath>
+    <Reference Include="this.Log, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\this.Log.0.0.2.0\lib\net40\this.Log.dll</HintPath>
     </Reference>
-    <Reference Include="this.Log-log4net, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\this.Log-log4net.0.0.1.0\lib\this.Log-log4net.dll</HintPath>
+    <Reference Include="this.Log-log4net, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\this.Log-log4net.0.0.2.0\lib\net40\this.Log-log4net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -83,7 +85,9 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="app.config.transform" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="this.Log-log4net.Sample.nuspec" />
     <Content Include="web.config.transform" />
   </ItemGroup>
