@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssembly.vb">
-      <Link>SharedAssembly.vb</Link>
+      <Link>My Project\SharedAssembly.vb</Link>
     </Compile>
     <Compile Include="LogExtensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
