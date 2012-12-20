@@ -31,7 +31,7 @@ Public Module LogExtensions
     Private ReadOnly _dictionary As ConcurrentDictionary(Of String, ILog) = New ConcurrentDictionary(Of String, ILog)
 
     ''' <summary>
-    ''' Gets the logger for <see cref="T"/>.
+    ''' Gets the logger for type indicated.
     ''' </summary>
     ''' <typeparam name="T"></typeparam>
     ''' <param name="type">The type to get the logger for.</param>
@@ -46,7 +46,7 @@ Public Module LogExtensions
     ''' <summary>
     ''' Gets the logger for the specified object name.
     ''' </summary>
-    ''' <param name="objectName">Either use the fully qualified object name or the short. If used with Log&lt;T&gt;() you must use the fully qualified object name"/></param>
+    ''' <param name="objectName">Either use the fully qualified object name or the short. If used with Log(Of T)() you must use the fully qualified object name"/></param>
     ''' <returns>Instance of a logger for the object.</returns>
     <Extension()>
     Public Function Log(objectName As String) As ILog
