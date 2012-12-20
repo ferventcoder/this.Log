@@ -98,8 +98,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="app.config.transform" />
     <None Include="packages.config" />
-    <None Include="this.Log-log4net.Sample.VB.nuspec" />
+    <None Include="this.Log-log4net.VB.Sample.nuspec" />
+    <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

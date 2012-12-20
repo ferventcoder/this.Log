@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssembly.cs">
+      <Link>Properties\SharedAssembly.cs</Link>
+    </Compile>
     <Compile Include="SampleRun.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,9 +78,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="app.config.transform" />
     <None Include="packages.config" />
     <None Include="this.Log-log4net.Sample.nuspec" />
+    <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

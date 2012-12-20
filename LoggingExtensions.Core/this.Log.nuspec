@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
@@ -14,7 +14,8 @@
 This package by itself only brings the logging extension and allows you to call this.Log().Debug, etc. 
 What it doesn't bring though is a logging facility. Please search nuget for this.Log to see the facilities.
     </description>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log</tags>
   </metadata>

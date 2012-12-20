@@ -35,6 +35,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssembly.cs">
+      <Link>Properties\SharedAssembly.cs</Link>
+    </Compile>
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\Log.cs" />
     <Content Include="ReadMe.txt" />

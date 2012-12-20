@@ -51,6 +51,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssembly.cs">
+      <Link>Properties\SharedAssembly.cs</Link>
+    </Compile>
     <Compile Include="Performance\Log4NetPerformanceSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TinySpec.cs" />

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
@@ -11,7 +11,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>this.Log-Moq - this.Log logging extension using Moq</summary>
     <description>this.Log-Moq is the Moq plugin to this.Log logging extension that brings the MockLogger.</description>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log testing moq</tags>
     <dependencies>
