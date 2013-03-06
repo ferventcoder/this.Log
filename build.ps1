@@ -63,7 +63,7 @@ dir -r -include packages.config -exclude **\.git\** | %{
 }
 
 $MsBuild="$($env:WINDIR)\Microsoft.NET\Framework\v4.0.30319\msbuild.exe"
-& $MsBuild $localDir\LoggingExtensions.sln /property:Configuration=Release
+& $MsBuild $localDir\LoggingExtensions.sln /property:Configuration=Release /p:Platform="Mixed Platforms"
 
 
 $outputDir = join-path $localDir 'bin'
@@ -78,6 +78,6 @@ dir -r -include *.csproj,*.vbproj -exclude **\.git\**,**\*.Tests\** | %{
     & $nugetExe pack $nuspecFile -OutputDirectory "$outputDir"
   } else {
     Write-Host "Building and packaging a nuget package for `'$_.FullName'";
-    & $nugetExe pack $_.FullName -Prop Configuration=Release -Symbols -OutputDirectory "$outputDir"
+    & $nugetExe pack $_.FullName -Prop Configuration=Release -Prop Platform=AnyCPU -Symbols -OutputDirectory "$outputDir"
   }
 }
