@@ -17,6 +17,11 @@ namespace LoggingExtensions.NLog
             _logger = LogManager.GetLogger(loggerName);
         }
 
+        public void Debug(string message, Exception exception)
+        {
+            if (_logger.IsDebugEnabled) _logger.DebugException(message, exception);
+        }
+
         public void Debug(string message, params object[] formatting)
         {
             if (_logger.IsDebugEnabled) _logger.Debug(message, formatting);
@@ -25,6 +30,11 @@ namespace LoggingExtensions.NLog
         public void Debug(Func<string> message)
         {
             if (_logger.IsDebugEnabled) _logger.Debug(message());
+        }
+
+        public void Info(string message, Exception exception)
+        {
+            if (_logger.IsInfoEnabled) _logger.InfoException(message, exception);
         }
 
         public void Info(string message, params object[] formatting)
@@ -37,6 +47,11 @@ namespace LoggingExtensions.NLog
             if (_logger.IsInfoEnabled) _logger.Info(message());
         }
 
+        public void Warn(string message, Exception exception)
+        {
+            if (_logger.IsWarnEnabled) _logger.WarnException(message, exception);
+        }
+
         public void Warn(string message, params object[] formatting)
         {
            if (_logger.IsWarnEnabled) _logger.Warn(message, formatting);
@@ -45,6 +60,12 @@ namespace LoggingExtensions.NLog
         public void Warn(Func<string> message)
         {
             if (_logger.IsWarnEnabled) _logger.Warn(message());
+        }
+
+        public void Error(string message, Exception exception)
+        {
+            // don't check for enabled at this level
+            _logger.ErrorException(message, exception);
         }
 
         public void Error(string message, params object[] formatting)
@@ -57,6 +78,12 @@ namespace LoggingExtensions.NLog
         {
             // don't check for enabled at this level
              _logger.Error(message());
+        }
+
+        public void Fatal(string message, Exception exception)
+        {
+            // don't check for enabled at this level
+            _logger.FatalException(message, exception);
         }
 
         public void Fatal(string message, params object[] formatting)
