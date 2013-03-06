@@ -38,6 +38,12 @@
         {
         }
 
+        public void Debug(string message, Exception exception)
+        {
+           LogMessage(LogLevel.Debug, string.Concat(message, Environment.NewLine, exception.Message, Environment.NewLine, exception.StackTrace));
+           _logger.Debug(message, exception);
+        }
+
         public void LogMessage(LogLevel logLevel, string message)
         {
             var list = _messages.Value.GetOrAdd(logLevel.ToString(), new List<string>());
@@ -56,6 +62,12 @@
             _logger.Debug(message);
         }
 
+        public void Info(string message, Exception exception)
+        {
+            LogMessage(LogLevel.Info, string.Concat(message, Environment.NewLine, exception.Message, Environment.NewLine, exception.StackTrace));
+            _logger.Info(message, exception);
+        }
+
         public void Info(string message, params object[] formatting)
         {
             LogMessage(LogLevel.Info, string.Format(message, formatting));
@@ -66,6 +78,12 @@
         {
             LogMessage(LogLevel.Info, message());
             _logger.Info(message);
+        }
+
+        public void Warn(string message, Exception exception)
+        {
+            LogMessage(LogLevel.Warn, string.Concat(message, Environment.NewLine, exception.Message, Environment.NewLine, exception.StackTrace));
+            _logger.Warn(message, exception);
         }
 
         public void Warn(string message, params object[] formatting)
@@ -80,6 +98,12 @@
             _logger.Warn(message);
         }
 
+        public void Error(string message, Exception exception)
+        {
+            LogMessage(LogLevel.Error, string.Concat(message, Environment.NewLine, exception.Message, Environment.NewLine, exception.StackTrace));
+            _logger.Error(message, exception);
+        }
+
         public void Error(string message, params object[] formatting)
         {
             LogMessage(LogLevel.Error, string.Format(message, formatting));
@@ -90,6 +114,12 @@
         {
             LogMessage(LogLevel.Error, message());
             _logger.Error(message);
+        }
+
+        public void Fatal(string message, Exception exception)
+        {
+            LogMessage(LogLevel.Fatal, string.Concat(message, Environment.NewLine, exception.Message, Environment.NewLine, exception.StackTrace));
+            _logger.Fatal(message, exception);
         }
 
         public void Fatal(string message, params object[] formatting)

@@ -12,7 +12,14 @@ namespace LoggingExtensions.Logging
         /// </summary>
         /// <param name="loggerName">Name of the logger</param>
         void InitializeFor(string loggerName);
-        
+
+        /// <summary>
+        /// Debug level of the specified message and exception.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        void Debug(string message, Exception exception);
+
         /// <summary>
         /// Debug level of the specified message. The other method is preferred since the execution is deferred.
         /// </summary>
@@ -25,6 +32,13 @@ namespace LoggingExtensions.Logging
         /// </summary>
         /// <param name="message">The message.</param>
         void Debug(Func<string> message);
+
+        /// <summary>
+        /// Info level of the specified message and exception.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        void Info(string message, Exception exception);
 
         /// <summary>
         /// Info level of the specified message. The other method is preferred since the execution is deferred.
@@ -40,6 +54,13 @@ namespace LoggingExtensions.Logging
         void Info(Func<string> message);
 
         /// <summary>
+        /// Warn level of the specified message and exception.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        void Warn(string message, Exception exception);
+
+        /// <summary>
         /// Warn level of the specified message. The other method is preferred since the execution is deferred.
         /// </summary>
         /// <param name="message">The message.</param>
@@ -53,6 +74,13 @@ namespace LoggingExtensions.Logging
         void Warn(Func<string> message);
 
         /// <summary>
+        /// Error level of the specified message and exception.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        void Error(string message, Exception exception);
+
+        /// <summary>
         /// Error level of the specified message. The other method is preferred since the execution is deferred.
         /// </summary>
         /// <param name="message">The message.</param>
@@ -64,6 +92,13 @@ namespace LoggingExtensions.Logging
         /// </summary>
         /// <param name="message">The message.</param>
         void Error(Func<string> message);
+
+        /// <summary>
+        /// Fatal level of the specified message and exception.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        void Fatal(string message, Exception exception);
 
         /// <summary>
         /// Fatal level of the specified message. The other method is preferred since the execution is deferred.

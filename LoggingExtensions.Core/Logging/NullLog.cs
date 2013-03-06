@@ -11,11 +11,19 @@ namespace LoggingExtensions.Logging
         {
         }
 
+        public void Debug(string message, Exception exception)
+        {
+        }
+
         public void Debug(string message, params object[] formatting)
         {
         }
 
         public void Debug(Func<string> message)
+        {
+        }
+
+        public void Info(string message, Exception exception)
         {
         }
 
@@ -27,6 +35,10 @@ namespace LoggingExtensions.Logging
         {
         }
 
+        public void Warn(string message, Exception exception)
+        {
+        }
+
         public void Warn(string message, params object[] formatting)
         {
         }
@@ -35,11 +47,19 @@ namespace LoggingExtensions.Logging
         {
         }
 
+        public void Error(string message, Exception exception)
+        {
+        }
+
         public void Error(string message, params object[] formatting)
         {
         }
 
         public void Error(Func<string> message)
+        {
+        }
+
+        public void Fatal(string message, Exception exception)
         {
         }
 
