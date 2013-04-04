@@ -59,6 +59,11 @@ namespace LoggingExtensions.NLog
              _logger.Error(message());
         }
 
+        public void Error(Func<string> message, Exception exception)
+        {
+            _logger.ErrorException(message(),exception);
+        }
+
         public void Fatal(string message, params object[] formatting)
         {
             // don't check for enabled at this level
@@ -69,6 +74,11 @@ namespace LoggingExtensions.NLog
         {
             // don't check for enabled at this level
             _logger.Fatal(message());
+        }
+
+        public void Fatal(Func<string> message, Exception exception)
+        {
+            _logger.FatalException(message(),exception);
         }
     }
 }

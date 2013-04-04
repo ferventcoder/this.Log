@@ -43,12 +43,22 @@ namespace LoggingExtensions.Logging
         {
         }
 
+        public void Error(Func<string> message, Exception exception)
+        {
+            
+        }
+
         public void Fatal(string message, params object[] formatting)
         {
         }
 
         public void Fatal(Func<string> message)
         {
+        }
+
+        public void Fatal(Func<string> message, Exception exception)
+        {
+           
         }
     }
 }

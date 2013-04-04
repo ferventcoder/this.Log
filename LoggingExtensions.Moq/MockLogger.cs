@@ -85,6 +85,12 @@
             Object.Error(message);
         }
 
+        public void Error(Func<string> message, Exception exception)
+        {
+            LogMessage(LogLevel.Error, message());
+            Object.Error(message,exception);
+        }
+
         public void Fatal(string message, params object[] formatting)
         {
             LogMessage(LogLevel.Fatal, string.Format(message, formatting));
@@ -95,6 +101,12 @@
         {
             LogMessage(LogLevel.Fatal, message());
             Object.Fatal(message);
+        }
+
+        public void Fatal(Func<string> message, Exception exception)
+        {
+            LogMessage(LogLevel.Fatal, message());
+            Object.Fatal(message,exception);
         }
     }
 }

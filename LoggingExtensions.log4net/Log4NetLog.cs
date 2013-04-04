@@ -42,7 +42,7 @@ namespace LoggingExtensions.log4net
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Info(string message, params object[] formatting)
         {
-           if (_logger.IsInfoEnabled) Log(Level.Info, message, formatting);
+            if (_logger.IsInfoEnabled) Log(Level.Info, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
@@ -54,7 +54,7 @@ namespace LoggingExtensions.log4net
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Warn(string message, params object[] formatting)
         {
-           if (_logger.IsWarnEnabled) Log(Level.Warn, message, formatting);
+            if (_logger.IsWarnEnabled) Log(Level.Warn, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
@@ -77,6 +77,11 @@ namespace LoggingExtensions.log4net
             Log(Level.Error, message);
         }
 
+        public void Error(Func<string> message, Exception exception)
+        {
+            Log(Level.Error, message, exception);
+        }
+
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Fatal(string message, params object[] formatting)
         {
@@ -91,10 +96,21 @@ namespace LoggingExtensions.log4net
             Log(Level.Fatal, message);
         }
 
+        public void Fatal(Func<string> message, Exception exception)
+        {
+            Log(Level.Fatal, message, exception);
+        }
+
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         private void Log(Level level, Func<string> message)
         {
-            _logger.Logger.Log(_declaringType, level, message(), null);
+            Log(level, message(), null);
+        }
+
+        [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
+        private void Log(Level level, Func<string> message, Exception exception)
+        {
+            _logger.Logger.Log(_declaringType, level, message(), exception);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
