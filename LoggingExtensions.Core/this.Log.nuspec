@@ -17,6 +17,7 @@ What it doesn't bring though is a logging facility. Please search nuget for this
     <releaseNotes>
       == v0.0.3 ==
       Strong named the assembly - https://github.com/ferventcoder/this.Log/pull/6
+      Error and Fatal can now have Exceptions passed to them (only the Func&lt;string&gt; versions though) - https://github.com/ferventcoder/this.Log/commit/4a468d2836312184597981e5e91a98909e23f1f8
     </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log</tags>

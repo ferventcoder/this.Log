@@ -15,6 +15,7 @@
       == v0.0.3 ==
       Strong named the assembly - https://github.com/ferventcoder/this.Log/pull/6
       Report the correct logger - https://github.com/ferventcoder/this.Log/pull/2 | https://github.com/ferventcoder/this.Log/issues/1
+      Error and Fatal can now have Exceptions passed to them (only the Func&lt;string&gt; versions though) - https://github.com/ferventcoder/this.Log/commit/4a468d2836312184597981e5e91a98909e23f1f8
     </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log log4net</tags>
