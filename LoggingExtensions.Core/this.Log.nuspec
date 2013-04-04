@@ -15,6 +15,8 @@ This package by itself only brings the logging extension and allows you to call 
 What it doesn't bring though is a logging facility. Please search nuget for this.Log to see the facilities.
     </description>
     <releaseNotes>
+      == v0.0.3 ==
+      Strong named the assembly - https://github.com/ferventcoder/this.Log/pull/6
     </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log</tags>

@@ -12,6 +12,8 @@
     <summary>this.Log-RhinoMocks - this.Log logging extension using Rhino Mocks</summary>
     <description>this.Log-RhinoMocks is the Rhino Mocks plugin to this.Log logging extension that brings the MockLogger.s</description>
     <releaseNotes>
+      == v0.0.3 ==
+      Strong named the assembly - https://github.com/ferventcoder/this.Log/pull/6
     </releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>logging log this.Log rhino rhino.mocks rhinomocks</tags>
