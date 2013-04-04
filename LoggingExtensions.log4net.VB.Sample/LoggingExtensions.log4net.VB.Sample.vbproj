@@ -105,6 +105,8 @@
     <None Include="app.config" />
     <Content Include="app.config.transform" />
     <None Include="packages.config" />
+    <None Include="SampleRun.vb.pp" />
+    <None Include="TestClass.vb.pp" />
     <None Include="this.Log-log4net.VB.Sample.nuspec" />
     <None Include="ReadMe.txt" />
     <Content Include="web.config.transform" />
