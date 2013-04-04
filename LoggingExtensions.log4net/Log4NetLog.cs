@@ -1,4 +1,7 @@
+using System.Globalization;
 using log4net.Config;
+using log4net.Core;
+using log4net.Util;
 
 [assembly: XmlConfigurator(Watch = true)]
 
@@ -7,7 +10,6 @@ namespace LoggingExtensions.log4net
     using System;
     using System.Runtime;
     using global::log4net;
-    using LoggingExtensions;
 
     /// <summary>
     /// Log4net logger implementing special ILog class
@@ -15,6 +17,9 @@ namespace LoggingExtensions.log4net
     public sealed class Log4NetLog : global::LoggingExtensions.Logging.ILog, global::LoggingExtensions.Logging.ILog<Log4NetLog>
     {
         private global::log4net.ILog _logger;
+
+        // ignore Log4NetLog in the call stack
+        private static readonly Type _declaringType = typeof(Log4NetLog);
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void InitializeFor(string loggerName)
@@ -25,76 +30,78 @@ namespace LoggingExtensions.log4net
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Debug(string message, params object[] formatting)
         {
-            if (_logger.IsDebugEnabled) _logger.DebugFormat(message, formatting);
+            if (_logger.IsDebugEnabled) Log(Level.Debug, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Debug(Func<string> message)
         {
-            if (_logger.IsDebugEnabled) _logger.Debug(message());
+            if (_logger.IsDebugEnabled) Log(Level.Debug, message);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Info(string message, params object[] formatting)
         {
-           if (_logger.IsInfoEnabled) _logger.InfoFormat(message, formatting);
+           if (_logger.IsInfoEnabled) Log(Level.Info, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Info(Func<string> message)
         {
-            if (_logger.IsInfoEnabled) _logger.Info(message());
+            if (_logger.IsInfoEnabled) Log(Level.Info, message);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Warn(string message, params object[] formatting)
         {
-           if (_logger.IsWarnEnabled) _logger.WarnFormat(message, formatting);
+           if (_logger.IsWarnEnabled) Log(Level.Warn, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Warn(Func<string> message)
         {
-            if (_logger.IsWarnEnabled) _logger.Warn(message());
+            if (_logger.IsWarnEnabled) Log(Level.Warn, message);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Error(string message, params object[] formatting)
         {
             // don't check for enabled at this level
-            _logger.ErrorFormat(message, formatting);
+            Log(Level.Error, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Error(Func<string> message)
         {
             // don't check for enabled at this level
-             _logger.Error(message());
+            Log(Level.Error, message);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Fatal(string message, params object[] formatting)
         {
             // don't check for enabled at this level
-            _logger.FatalFormat(message, formatting);
+            Log(Level.Fatal, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Fatal(Func<string> message)
         {
             // don't check for enabled at this level
-            _logger.Fatal(message());
+            Log(Level.Fatal, message);
         }
 
-        //public string DecorateMessageWithAuditInformation(string message)
-        //{
-        //    string currentUserName = ApplicationParameters.GetCurrentUserName();
-        //    if (!string.IsNullOrWhiteSpace(currentUserName))
-        //    {
-        //        return "{0} - {1}".FormatWith(message, currentUserName);
-        //    }
+        [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
+        private void Log(Level level, Func<string> message)
+        {
+            _logger.Logger.Log(_declaringType, level, message(), null);
+        }
 
-        //    return message;
-        //}
+        [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
+        private void Log(Level level, string message, params object[] formatting)
+        {
+            // SystemStringFormat is used to evaluate the message as late as possible. A filter may discard this message.
+            _logger.Logger.Log(_declaringType, level, new SystemStringFormat(CultureInfo.CurrentCulture, message, formatting), null);
+        }
     }
 }

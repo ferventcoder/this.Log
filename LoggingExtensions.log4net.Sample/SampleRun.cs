@@ -29,6 +29,17 @@ namespace LoggingExtensions.Sample.log4net
             LoggingExtensions.Logging.Log.InitializeWith<LoggingExtensions.log4net.Log4NetLog>();
 
             "Main".Log().Info(() => "This is a logging message");
-        } 
+            
+            Foo foo = new Foo();
+            foo.Bar();
+        }
+
+        public class Foo
+        {
+            public void Bar()
+            {
+                this.Log().Info(() => "This is a logging message from the Bar method of Foo");
+            }
+        }
     }
 }
