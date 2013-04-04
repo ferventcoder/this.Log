@@ -9,7 +9,7 @@
     {
         public abstract class Log4NetPerformanceSpecsBase : TinySpec
         {
-            protected int NumberOfIterations = 100000;
+            protected int NumberOfIterations = 1000000;
             protected Stopwatch stopwatch;
 
             public override void Context()
