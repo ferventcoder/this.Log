@@ -54,18 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog">
-      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.2.1.0\lib\net40\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="this.Log, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\this.Log.0.0.2.0\lib\net40\this.Log.dll</HintPath>
-    </Reference>
-    <Reference Include="this.Log-NLog, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\this.Log-NLog.0.0.2.0\lib\net40\this.Log-NLog.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssembly.cs">
@@ -109,6 +101,16 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoggingExtensions.Core\LoggingExtensions.Core.csproj">
+      <Project>{F61EB8DD-2E99-4E3B-96F0-8015FC6FB880}</Project>
+      <Name>LoggingExtensions.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggingExtensions.NLog\LoggingExtensions.NLog.csproj">
+      <Project>{E045C968-1B32-493F-A3C1-B428A2789F44}</Project>
+      <Name>LoggingExtensions.NLog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
