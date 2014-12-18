@@ -19,7 +19,7 @@ namespace LoggingExtensions.NLog
 
         public void Debug(string message, params object[] formatting)
         {
-            if (_logger.IsDebugEnabled) _logger.Log(typeof(NLogLog), new LogEventInfo(LogLevel.Debug, _logger.Name, message));
+            if (_logger.IsDebugEnabled) _logger.Log(typeof(NLogLog), new LogEventInfo(LogLevel.Debug, _logger.Name, string.Format(message, formatting)));
         }
 
         public void Debug(Func<string> message)
