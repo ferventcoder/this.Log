@@ -12,7 +12,20 @@ namespace LoggingExtensions.Logging
         /// </summary>
         /// <param name="loggerName">Name of the logger</param>
         void InitializeFor(string loggerName);
-        
+
+        /// <summary>
+        /// Trace level of the specified message. The other method is preferred since the execution is deferred.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="formatting">The formatting.</param>
+        void Trace(string message, params object[] formatting);
+
+        /// <summary>
+        /// Trace level of the specified message.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        void Trace(Func<string> message);
+
         /// <summary>
         /// Debug level of the specified message. The other method is preferred since the execution is deferred.
         /// </summary>

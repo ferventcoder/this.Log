@@ -17,6 +17,16 @@ namespace LoggingExtensions.NLog
             _logger = LogManager.GetLogger(loggerName);
         }
 
+        public void Trace(string message, params object[] formatting)
+        {
+            if (_logger.IsTraceEnabled) _logger.Log(typeof(NLogLog), new LogEventInfo(LogLevel.Trace, _logger.Name, string.Format(message, formatting)));
+        }
+
+        public void Trace(Func<string> message)
+        {
+            if (_logger.IsTraceEnabled) _logger.Log(typeof(NLogLog), new LogEventInfo(LogLevel.Trace, _logger.Name, message()));
+        }
+
         public void Debug(string message, params object[] formatting)
         {
             if (_logger.IsDebugEnabled) _logger.Log(typeof(NLogLog), new LogEventInfo(LogLevel.Debug, _logger.Name, string.Format(message, formatting)));

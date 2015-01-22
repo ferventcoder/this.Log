@@ -11,6 +11,14 @@ namespace LoggingExtensions.Logging
         {
         }
 
+        public void Trace(string message, params object[] formatting)
+        {
+        }
+
+        public void Trace(Func<string> message)
+        {
+        }
+
         public void Debug(string message, params object[] formatting)
         {
         }

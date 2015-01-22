@@ -8,6 +8,7 @@
 
     public enum LogLevel
     {
+        Trace,
         Debug,
         Info,
         Warn,
@@ -42,6 +43,18 @@
         {
             var list = _messages.Value.GetOrAdd(logLevel.ToString(), new List<string>());
             list.Add(message);
+        }
+
+        public void Trace(string message, params object[] formatting)
+        {
+            LogMessage(LogLevel.Trace, string.Format(message, formatting));
+            _logger.Trace(message, formatting);
+        }
+
+        public void Trace(Func<string> message)
+        {
+            LogMessage(LogLevel.Trace, message());
+            _logger.Trace(message);
         }
 
         public void Debug(string message, params object[] formatting)
