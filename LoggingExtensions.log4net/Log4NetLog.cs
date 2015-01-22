@@ -30,13 +30,13 @@ namespace LoggingExtensions.log4net
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Trace(string message, params object[] formatting)
         {
-            if (_logger.IsDebugEnabled) Log(Level.Trace, message, formatting);
+            if (_logger.IsTraceEnabled) Log(Level.Trace, message, formatting);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
         public void Trace(Func<string> message)
         {
-            if (_logger.IsDebugEnabled) Log(Level.Trace, message);
+            if (_logger.IsTraceEnabled) Log(Level.Trace, message);
         }
 
         [TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")]
